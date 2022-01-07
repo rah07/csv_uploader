@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const csvController = require('../controllers/csvControllers');
+const csvController = require('../controllers/csvController');
 
 //page routes
 router.get('/displayfiles', csvController.displayfiles);

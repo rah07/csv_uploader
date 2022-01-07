@@ -1,14 +1,10 @@
-const mongoose= require('mongoose');
-const { devNull } = require('os');
+const mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/csv_upload');
 
-mongoose.connect('mongodb://localhost/csv_uploader');
 
-const db=mongoose.connection;
-db.on('error',console.error.bind(console,"Error in connection of database "))
-
-db.once("open",()=>{
-
-    console.log('Successfully connected to database');
+const db = mongoose.connection;
+db.on('error', console.error.bind(console, 'ERROR CONNECTING TO DATABASE...'));
+db.once('open', () => {
+  console.log('Successfully connected to database');
 });
-
-module.exports=db;
+module.exports = db;
